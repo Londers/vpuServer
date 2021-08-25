@@ -1,0 +1,9 @@
+WARNING: TIME: 2021/08/24 12:44:30 http: TLS handshake error from [::1]:50550: remote error: tls: unknown certificate
+DEBUG: TIME: 2021/08/24 12:44:44 hub.go:66: остановили клиента 
+WARNING: TIME: 2021/08/24 12:44:44 http: TLS handshake error from [::1]:50708: remote error: tls: unknown certificate
+DEBUG: TIME: 2021/08/24 12:44:58 hub.go:66: остановили клиента TechAutomatic
+WARNING: TIME: 2021/08/24 12:44:58 http: TLS handshake error from [::1]:50834: remote error: tls: unknown certificate
+DEBUG: TIME: 2021/08/24 12:45:07 hub.go:66: остановили клиента 
+WARNING: TIME: 2021/08/24 12:45:08 http: TLS handshake error from [::1]:50940: remote error: tls: unknown certificate
+ERROR: TIME: 2021/08/24 13:37:35 main.go:74: |Message: Error start main server  http: Server closed
+INFO: TIME: 2021/08/24 13:37:35 |Message: Shutting down server...

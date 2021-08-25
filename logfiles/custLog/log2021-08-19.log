@@ -1,0 +1,14 @@
+DEBUG: TIME: 2021/08/19 11:20:42 programLicense.go:105: ParseFields 200 5000
+INFO: TIME: 2021/08/19 11:20:42 |Message: Start work...
+DEBUG: TIME: 2021/08/19 11:23:48 programLicense.go:105: ParseFields 200 5000
+INFO: TIME: 2021/08/19 11:23:48 |Message: Start work...
+INFO: TIME: 2021/08/19 11:23:48 |Message: Start server with SSL
+ERROR: TIME: 2021/08/19 11:23:48 main.go:74: |Message: Error start main server  listen tcp :8080: bind: address already in use
+ERROR: TIME: 2021/08/19 11:23:48 main.go:83: |Message: Error start main server  listen tcp :4444: bind: address already in use
+INFO: TIME: 2021/08/19 11:23:58 |Message: Shutting down server...
+DEBUG: TIME: 2021/08/19 11:24:00 programLicense.go:105: ParseFields 200 5000
+INFO: TIME: 2021/08/19 11:24:00 |Message: Start work...
+INFO: TIME: 2021/08/19 11:24:00 |Message: Start server with SSL
+WARNING: TIME: 2021/08/19 11:24:03 http: TLS handshake error from [::1]:39774: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/19 11:24:03 http: TLS handshake error from [::1]:39776: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/19 11:24:04 http: TLS handshake error from [::1]:39788: remote error: tls: unknown certificate

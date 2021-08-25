@@ -1,0 +1,29 @@
+WARNING: TIME: 2021/08/20 13:47:58 http: TLS handshake error from 192.168.115.134:44606: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:48:01 http: TLS handshake error from 192.168.115.134:44638: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:48:39 http: TLS handshake error from 192.168.115.134:44956: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:48:39 http: TLS handshake error from 192.168.115.134:44958: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:48:41 http: TLS handshake error from 192.168.115.134:44986: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:48:41 http: TLS handshake error from 192.168.115.134:44988: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:48:48 http: TLS handshake error from 192.168.115.134:45058: remote error: tls: unknown certificate
+DEBUG: TIME: 2021/08/20 13:53:07 hub.go:66: остановили клиента 
+WARNING: TIME: 2021/08/20 13:53:07 http: TLS handshake error from 192.168.115.134:47182: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:55:42 http: TLS handshake error from 192.168.115.134:48456: remote error: tls: unknown certificate
+DEBUG: TIME: 2021/08/20 13:55:45 hub.go:66: остановили клиента 
+DEBUG: TIME: 2021/08/20 13:55:45 hub.go:66: остановили клиента 
+WARNING: TIME: 2021/08/20 13:55:46 http: TLS handshake error from 192.168.115.134:48490: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:56:27 http: TLS handshake error from 192.168.115.134:48838: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:57:24 http: TLS handshake error from 192.168.115.134:49306: remote error: tls: unknown certificate
+DEBUG: TIME: 2021/08/20 13:57:26 hub.go:66: остановили клиента 
+DEBUG: TIME: 2021/08/20 13:57:26 hub.go:66: остановили клиента 
+DEBUG: TIME: 2021/08/20 13:57:26 hub.go:66: остановили клиента 
+WARNING: TIME: 2021/08/20 13:57:26 http: TLS handshake error from 192.168.115.134:49340: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:58:19 http: TLS handshake error from 192.168.115.134:49778: remote error: tls: unknown certificate
+DEBUG: TIME: 2021/08/20 13:58:26 hub.go:66: остановили клиента 
+DEBUG: TIME: 2021/08/20 13:58:26 hub.go:66: остановили клиента 
+WARNING: TIME: 2021/08/20 13:58:26 http: TLS handshake error from 192.168.115.134:49846: remote error: tls: unknown certificate
+DEBUG: TIME: 2021/08/20 13:58:57 hub.go:66: остановили клиента 
+WARNING: TIME: 2021/08/20 13:58:58 http: TLS handshake error from 192.168.115.134:50120: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/20 13:59:31 http: TLS handshake error from 192.168.115.134:50402: remote error: tls: unknown certificate
+DEBUG: TIME: 2021/08/20 14:14:03 hub.go:66: остановили клиента 
+DEBUG: TIME: 2021/08/20 14:14:03 hub.go:66: остановили клиента 
+WARNING: TIME: 2021/08/20 14:14:03 http: TLS handshake error from 192.168.115.134:57734: remote error: tls: unknown certificate
