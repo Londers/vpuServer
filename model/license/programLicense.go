@@ -9,9 +9,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Londers/TLServer/logger"
+	u "github.com/Londers/vpuServer/utils"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/ruraomsk/TLServer/logger"
-	u "github.com/ruraomsk/VPUserver/utils"
 )
 
 // key ключ шифрования токена должен совпадать с ключем на сервере создания ключа

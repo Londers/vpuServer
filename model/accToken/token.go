@@ -2,7 +2,7 @@ package accToken
 
 import (
 	"github.com/dgrijalva/jwt-go"
-	"github.com/ruraomsk/VPUserver/model/license"
+	"github.com/Londers/vpuServer/model/license"
 )
 
 //Token (JWT) структура токена доступа

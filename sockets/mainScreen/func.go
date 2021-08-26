@@ -3,9 +3,9 @@ package mainScreen
 import (
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/ruraomsk/VPUserver/model/accToken"
-	"github.com/ruraomsk/VPUserver/model/data"
-	"github.com/ruraomsk/VPUserver/model/license"
+	"github.com/Londers/vpuServer/model/accToken"
+	"github.com/Londers/vpuServer/model/data"
+	"github.com/Londers/vpuServer/model/license"
 	"golang.org/x/crypto/bcrypt"
 	"strings"
 	"time"

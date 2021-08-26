@@ -2,11 +2,11 @@ package mainScreen
 
 import (
 	"encoding/json"
+	"github.com/Londers/TLServer/logger"
+	"github.com/Londers/vpuServer/model/accToken"
+	"github.com/Londers/vpuServer/model/data"
+	"github.com/Londers/vpuServer/sockets"
 	"github.com/gorilla/websocket"
-	"github.com/ruraomsk/TLServer/logger"
-	"github.com/ruraomsk/VPUserver/model/accToken"
-	"github.com/ruraomsk/VPUserver/model/data"
-	"github.com/ruraomsk/VPUserver/sockets"
 	"github.com/ruraomsk/device/dataBase"
 	"time"
 )

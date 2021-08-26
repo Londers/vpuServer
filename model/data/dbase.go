@@ -3,12 +3,12 @@ package data
 import (
 	"database/sql"
 	"fmt"
-	"github.com/ruraomsk/VPUserver/config"
+	"github.com/Londers/vpuServer/config"
 	"sync"
 
 	_ "github.com/lib/pq"
 
-	"github.com/ruraomsk/TLServer/logger"
+	"github.com/Londers/TLServer/logger"
 )
 
 var (

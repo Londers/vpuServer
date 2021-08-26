@@ -1,0 +1,6 @@
+DEBUG: TIME: 2021/08/25 12:05:19 programLicense.go:105: ParseFields 200 5000
+INFO: TIME: 2021/08/25 12:05:19 |Message: Start work...
+INFO: TIME: 2021/08/25 12:05:19 |Message: Start server with SSL
+WARNING: TIME: 2021/08/25 12:06:33 http: TLS handshake error from [::1]:36452: remote error: tls: unknown certificate
+INFO: TIME: 2021/08/25 12:09:43 |Message: Shutting down server...
+ERROR: TIME: 2021/08/25 12:09:43 main.go:74: |Message: Error start main server  http: Server closed

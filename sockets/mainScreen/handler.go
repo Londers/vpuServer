@@ -4,8 +4,8 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
-	"github.com/ruraomsk/VPUserver/model/accToken"
-	u "github.com/ruraomsk/VPUserver/utils"
+	"github.com/Londers/vpuServer/model/accToken"
+	u "github.com/Londers/vpuServer/utils"
 	"github.com/ruraomsk/device/dataBase"
 	"net/http"
 )

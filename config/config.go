@@ -2,8 +2,8 @@ package config
 
 import (
 	"fmt"
-	"github.com/ruraomsk/VPUserver/tcpConnect"
-	//"github.com/ruraomsk/TLServer/internal/app/tcpConnect"
+	"github.com/Londers/vpuServer/tcpConnect"
+	//"github.com/Londers/TLServer/internal/app/tcpConnect"
 )
 
 //GlobalConfig глобальная переменная для структуры конфиг

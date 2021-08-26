@@ -1,10 +1,10 @@
 package mainScreen
 
 import (
-	"github.com/ruraomsk/TLServer/logger"
-	"github.com/ruraomsk/VPUserver/model/accToken"
-	"github.com/ruraomsk/VPUserver/model/data"
-	"github.com/ruraomsk/VPUserver/model/license"
+	"github.com/Londers/TLServer/logger"
+	"github.com/Londers/vpuServer/model/accToken"
+	"github.com/Londers/vpuServer/model/data"
+	"github.com/Londers/vpuServer/model/license"
 	"time"
 )
 

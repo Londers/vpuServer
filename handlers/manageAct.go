@@ -2,13 +2,13 @@ package handlers
 
 import (
 	"fmt"
-	"github.com/ruraomsk/VPUserver/model/accToken"
+	"github.com/Londers/vpuServer/model/accToken"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/ruraomsk/VPUserver/model/data"
-	u "github.com/ruraomsk/VPUserver/utils"
+	"github.com/Londers/vpuServer/model/data"
+	u "github.com/Londers/vpuServer/utils"
 )
 
 //ActUpdateAccount обработчик запроса обновления (работа с пользователями)

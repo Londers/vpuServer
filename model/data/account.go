@@ -9,8 +9,8 @@ import (
 	"time"
 
 	validation "github.com/go-ozzo/ozzo-validation"
-	"github.com/ruraomsk/VPUserver/model/license"
-	u "github.com/ruraomsk/VPUserver/utils"
+	"github.com/Londers/vpuServer/model/license"
+	u "github.com/Londers/vpuServer/utils"
 	"golang.org/x/crypto/bcrypt"
 )
 

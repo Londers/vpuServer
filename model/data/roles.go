@@ -3,13 +3,13 @@ package data
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/ruraomsk/VPUserver/model/accToken"
+	"github.com/Londers/vpuServer/model/accToken"
 	"io/ioutil"
 	"net/http"
 	"strings"
 	"sync"
 
-	u "github.com/ruraomsk/VPUserver/utils"
+	u "github.com/Londers/vpuServer/utils"
 )
 
 //RoleInfo глабальная переменная для обращения к мапам

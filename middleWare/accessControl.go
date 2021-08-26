@@ -1,14 +1,14 @@
 package middleWare
 
 import (
-	"github.com/ruraomsk/TLServer/logger"
-	"github.com/ruraomsk/VPUserver/model/accToken"
+	"github.com/Londers/TLServer/logger"
+	"github.com/Londers/vpuServer/model/accToken"
 	"net/http"
 	"strings"
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/ruraomsk/VPUserver/model/data"
+	"github.com/Londers/vpuServer/model/data"
 )
 
 //AccessControl проверка разрешен ли пользователя доступ к запрашиваемому ресурсу

@@ -2,9 +2,9 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/ruraomsk/VPUserver/model/accToken"
-	"github.com/ruraomsk/VPUserver/model/data"
-	u "github.com/ruraomsk/VPUserver/utils"
+	"github.com/Londers/vpuServer/model/accToken"
+	"github.com/Londers/vpuServer/model/data"
+	u "github.com/Londers/vpuServer/utils"
 )
 
 //DisplayAccInfo отображение информации об аккаунтах для администрирования

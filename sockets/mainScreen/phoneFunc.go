@@ -2,7 +2,7 @@ package mainScreen
 
 import (
 	"encoding/json"
-	"github.com/ruraomsk/VPUserver/model/data"
+	"github.com/Londers/vpuServer/model/data"
 	"github.com/ruraomsk/device/dataBase"
 	"reflect"
 	"sort"

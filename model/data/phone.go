@@ -3,7 +3,7 @@ package data
 import (
 	"encoding/json"
 	"fmt"
-	u "github.com/ruraomsk/VPUserver/utils"
+	u "github.com/Londers/vpuServer/utils"
 	"net/http"
 )
 

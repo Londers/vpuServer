@@ -2,12 +2,12 @@ package apiserver
 
 import (
 	"bufio"
+	"github.com/Londers/TLServer/logger"
+	"github.com/Londers/vpuServer/handlers"
+	"github.com/Londers/vpuServer/middleWare"
+	"github.com/Londers/vpuServer/sockets/mainScreen"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/ruraomsk/TLServer/logger"
-	"github.com/ruraomsk/VPUserver/handlers"
-	"github.com/ruraomsk/VPUserver/middleWare"
-	"github.com/ruraomsk/VPUserver/sockets/mainScreen"
 	"github.com/unrolled/secure"
 	"net/http"
 	"os"

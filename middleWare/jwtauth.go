@@ -2,15 +2,15 @@ package middleWare
 
 import (
 	"fmt"
-	"github.com/ruraomsk/VPUserver/model/accToken"
+	"github.com/Londers/vpuServer/model/accToken"
 	"net/http"
 	"strings"
 
-	"github.com/ruraomsk/TLServer/logger"
+	"github.com/Londers/TLServer/logger"
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/ruraomsk/VPUserver/model/data"
+	"github.com/Londers/vpuServer/model/data"
 )
 
 //JwtAuth контроль токена для всех прошедших регистрацию и обрашающихся к ресурсу

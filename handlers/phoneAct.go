@@ -2,14 +2,13 @@ package handlers
 
 import (
 	//"fmt"
-	//"github.com/ruraomsk/TLServer/internal/model/accToken"
+	//"github.com/Londers/TLServer/internal/model/accToken"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 
-	"../model/data"
-
-	u "github.com/ruraomsk/VPUserver/utils"
+	"github.com/Londers/vpuServer/model/data"
+	u "github.com/Londers/vpuServer/utils"
 )
 
 //ActUpdatePhone обработчик запроса обновления устройства
