@@ -3,21 +3,20 @@ package mainScreen
 import (
 	"encoding/json"
 	"github.com/Londers/vpuServer/model/data"
-	"github.com/ruraomsk/device/dataBase"
 	"reflect"
 	"sort"
 	"strings"
 )
 
-func getAllPhones() map[string]dataBase.Phone {
-	phones := make(map[string]dataBase.Phone)
+func getAllPhones() map[string]data.Phone {
+	phones := make(map[string]data.Phone)
 	db, id := data.GetDB()
 	defer data.FreeDB(id)
 	rows, err := db.Query("select phone from phones;")
 	if err != nil {
 		return phones
 	}
-	var phone dataBase.Phone
+	var phone data.Phone
 	var buff []byte
 	for rows.Next() {
 		_ = rows.Scan(&buff)
@@ -26,8 +25,8 @@ func getAllPhones() map[string]dataBase.Phone {
 	}
 	return phones
 }
-func mapToArray(phones map[string]dataBase.Phone) []dataBase.Phone {
-	res := make([]dataBase.Phone, 0)
+func mapToArray(phones map[string]data.Phone) []data.Phone {
+	res := make([]data.Phone, 0)
 	for _, ph := range phones {
 		res = append(res, ph)
 	}
@@ -60,11 +59,11 @@ func (h *HubMainScreen) mainPage() {
 		newPhones := getAllPhones()
 		for client := range h.clients {
 			if !client.isLogin || !client.work {
-				client.listPhone = make(map[string]dataBase.Phone)
+				client.listPhone = make(map[string]data.Phone)
 				continue
 			}
 			if len(newPhones) != len(client.listPhone) {
-				resp := newMainMess(typePhoneTable, nil)
+				resp := newPhoneMess(typePhoneTable, nil)
 				resp.Data["phones"] = mapToArray(newPhones)
 				resp.Data["areas"] = getAreas()
 				client.send <- resp
@@ -95,7 +94,7 @@ func (h *HubMainScreen) mainPage() {
 					}
 				}
 				if found {
-					resp := newMainMess(typePhoneTable, nil)
+					resp := newPhoneMess(typePhoneTable, nil)
 					resp.Data["phones"] = mapToArray(newPhones)
 					resp.Data["areas"] = getAreas()
 					client.send <- resp

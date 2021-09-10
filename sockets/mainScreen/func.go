@@ -1,15 +1,65 @@
 package mainScreen
 
 import (
+	"encoding/json"
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
+	"github.com/Londers/TLServer/logger"
 	"github.com/Londers/vpuServer/model/accToken"
 	"github.com/Londers/vpuServer/model/data"
 	"github.com/Londers/vpuServer/model/license"
+	"github.com/dgrijalva/jwt-go"
 	"golang.org/x/crypto/bcrypt"
+	"strconv"
 	"strings"
 	"time"
 )
+
+func createPhone(raw []byte) bool {
+	return true
+}
+
+func updatePhone(raw []byte, phoneList map[string]data.Phone) (string, data.Phone) {
+	db, id := data.GetDB()
+	defer data.FreeDB(id)
+
+	var rawData map[string]interface{}
+	if err := json.Unmarshal(raw, &rawData); err != nil {
+		fmt.Println("FUCK ", err.Error())
+		return "", data.Phone{}
+	}
+	//fmt.Println(fmt.Sprint(rawData))
+
+	var dataq, _ = json.Marshal(rawData["data"])
+
+	var phone data.Phone
+	if err := json.Unmarshal(dataq, &phone); err != nil {
+		fmt.Println("FUCK ", err.Error())
+		return "", data.Phone{}
+	}
+	//fmt.Println(fmt.Sprint(phone))
+
+	var strAreas []string
+	for _, i := range phone.Areas {
+		strAreas = append(strAreas, strconv.Itoa(int(i)))
+	}
+
+	sqlStr := fmt.Sprintf(`UPDATE public.phones SET phone = phone::jsonb || '{"name": "%v", "areas": [%v]}' WHERE login = '%v';`,
+		phone.Name, strings.Join(strAreas, ","), phone.Login)
+	//UPDATE phones SET phone = '{"areas": [1, 3], "login": "rura2", "name": "Тестовый пользователь123", "password": "$2a$10$iGwDAJZzV5oMvIwukj7WQevhBp4kfCQZUoI9xSV7Dojjp/zKql9UO"}'::jsonb WHERE login = 'rura2';
+	//fmt.Println(*phone)
+	//fmt.Println(sqlStr)
+
+	updatedPhone := phoneList[phone.Login]
+	updatedPhone.Name = phone.Name
+	updatedPhone.Areas = phone.Areas
+
+	_, err := db.Query(sqlStr)
+	if err != nil {
+		logger.Error.Println("|Message: phone socket (update), DB not respond : ", err.Error())
+	}
+
+	return phone.Login, updatedPhone
+}
 
 //checkToken проверка токена для вебсокета
 func checkToken(cookie string, ip string) (flag bool, t *accToken.Token) {

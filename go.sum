@@ -1,6 +1,11 @@
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
+github.com/Londers/TLServer v0.0.0-20210217115252-9213ce7cf083/go.mod h1:13MnFtU8WWELyBDpvhV2jssD7degyW//4IohAR/oiW4=
+github.com/Londers/TLServer v0.0.0-20210406045801-7be6f944312e h1:0cJaRvefLLAzQ4rmyra/X9Gn/b8k0fDajffagT0zkc0=
+github.com/Londers/TLServer v0.0.0-20210406045801-7be6f944312e/go.mod h1:gI4E8debBX48NdV+s7XxSRC1gU/yUVKRCX76QQwEsFA=
+github.com/Londers/TLServer v0.0.0-20210520105014-70bd1cf481f7 h1:2wlR/deVXZ1F6iI4awRHetUFDAJ17TagFLar6NHcMCg=
+github.com/Londers/TLServer v0.0.0-20210520105014-70bd1cf481f7/go.mod h1:oc2pKIYenEoMzes8yVaXNch1Qfzy/Qw7q9WnwnBoIqk=
 github.com/Londers/TLServer v0.0.0-20210826070709-e58151c3672f h1:dO3odzq7KjxLk1NC2IDAfGfIOBKNAr2twNIUspwe8xA=
 github.com/Londers/TLServer v0.0.0-20210826070709-e58151c3672f/go.mod h1:rcTrQ0vE/953tGRhJw+LJLn5yK/L4m14f0/uQRhCe+E=
 github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef h1:46PFijGLmAjMPwCCCo7Jf0W6f9slllCkkv7vyc1yOSg=
@@ -121,11 +126,9 @@ github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:
 github.com/rogpeppe/go-internal v1.6.1/go.mod h1:xXDCJY+GAPziupqXw64V24skbSoqbTEfhy4qGm1nDQc=
 github.com/rogpeppe/go-internal v1.8.0 h1:FCbCCtXNOY3UtUuHUYaghJg4y7Fd14rXifAYUAtL9R8=
 github.com/rogpeppe/go-internal v1.8.0/go.mod h1:WmiCO8CzOY8rg0OYDC4/i/2WRWAB6poM+XZ2dLUbcbE=
-github.com/Londers/TLServer v0.0.0-20210217115252-9213ce7cf083/go.mod h1:13MnFtU8WWELyBDpvhV2jssD7degyW//4IohAR/oiW4=
-github.com/Londers/TLServer v0.0.0-20210406045801-7be6f944312e h1:0cJaRvefLLAzQ4rmyra/X9Gn/b8k0fDajffagT0zkc0=
-github.com/Londers/TLServer v0.0.0-20210406045801-7be6f944312e/go.mod h1:gI4E8debBX48NdV+s7XxSRC1gU/yUVKRCX76QQwEsFA=
-github.com/Londers/TLServer v0.0.0-20210520105014-70bd1cf481f7 h1:2wlR/deVXZ1F6iI4awRHetUFDAJ17TagFLar6NHcMCg=
-github.com/Londers/TLServer v0.0.0-20210520105014-70bd1cf481f7/go.mod h1:oc2pKIYenEoMzes8yVaXNch1Qfzy/Qw7q9WnwnBoIqk=
+github.com/ruraomsk/TLServer v0.0.0-20210217115252-9213ce7cf083/go.mod h1:13MnFtU8WWELyBDpvhV2jssD7degyW//4IohAR/oiW4=
+github.com/ruraomsk/TLServer v0.0.0-20210406045801-7be6f944312e h1:0cJaRvefLLAzQ4rmyra/X9Gn/b8k0fDajffagT0zkc0=
+github.com/ruraomsk/TLServer v0.0.0-20210406045801-7be6f944312e/go.mod h1:gI4E8debBX48NdV+s7XxSRC1gU/yUVKRCX76QQwEsFA=
 github.com/ruraomsk/ag-server v0.0.0-20210331101359-3eb5e2a69177/go.mod h1:GA82ZD7L8MdRq7SCNrN0cMOlzpmAvFJ+uFrg5mEul5Q=
 github.com/ruraomsk/ag-server v0.0.0-20210408071510-b560643080fc h1:LHEcxBaefCvNCsOuAiH5Sa7L/lCf/Azy3CXWlCKqJzA=
 github.com/ruraomsk/ag-server v0.0.0-20210408071510-b560643080fc/go.mod h1:DBL8eczWqzYkkDRJ0lpOOrzDzGdv5p+gbwsQROMdOuY=

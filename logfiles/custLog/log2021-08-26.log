@@ -1,2 +1,17 @@
 INFO: TIME: 2021/08/26 13:15:50 |Message: Start work...
 INFO: TIME: 2021/08/26 13:19:17 |Message: Start work...
+DEBUG: TIME: 2021/08/26 13:44:13 programLicense.go:105: ParseFields 200 5000
+INFO: TIME: 2021/08/26 13:44:13 |Message: Start work...
+INFO: TIME: 2021/08/26 13:44:13 |Message: Start server with SSL
+DEBUG: TIME: 2021/08/26 13:44:42 programLicense.go:105: ParseFields 200 5000
+INFO: TIME: 2021/08/26 13:44:42 |Message: Start work...
+INFO: TIME: 2021/08/26 13:44:42 |Message: Start server with SSL
+WARNING: TIME: 2021/08/26 13:44:50 http: TLS handshake error from [::1]:60892: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/26 13:45:33 http: TLS handshake error from [::1]:33028: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/26 13:45:42 http: TLS handshake error from [::1]:33110: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/26 13:45:42 http: TLS handshake error from [::1]:33112: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/26 13:45:47 http: TLS handshake error from [::1]:33162: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/26 13:45:47 http: TLS handshake error from [::1]:33160: remote error: tls: unknown certificate
+INFO: TIME: 2021/08/26 13:45:47 |IP: [::1]:33164 |Login: - |Resource: /MainPageW |Message: websocket: the client is not using the websocket protocol: 'upgrade' token not found in 'Connection' header
+WARNING: TIME: 2021/08/26 13:47:51 http: TLS handshake error from [::1]:34182: remote error: tls: unknown certificate
+WARNING: TIME: 2021/08/26 13:48:40 http: TLS handshake error from [::1]:34614: remote error: tls: unknown certificate

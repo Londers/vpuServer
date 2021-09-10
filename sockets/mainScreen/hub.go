@@ -10,14 +10,14 @@ import (
 
 type HubMainScreen struct {
 	clients    map[*ClientMS]bool
-	broadcast  chan mSResponse
+	broadcast  chan phoneResponse
 	register   chan *ClientMS
 	unregister chan *ClientMS
 }
 
 func NewMainScreenHub() *HubMainScreen {
 	return &HubMainScreen{
-		broadcast:  make(chan mSResponse),
+		broadcast:  make(chan phoneResponse),
 		clients:    make(map[*ClientMS]bool),
 		register:   make(chan *ClientMS),
 		unregister: make(chan *ClientMS),
@@ -44,7 +44,7 @@ func (h *HubMainScreen) Run() {
 		case client := <-h.register:
 			{
 				flag, tk := checkToken(client.cookie, client.cInfo.IP)
-				resp := newMainMess(typeMapInfo, nil)
+				resp := newPhoneMess(typeMapInfo, nil)
 				if flag {
 					resp.Data["role"] = tk.Role
 					resp.Data["access"] = data.AccessCheck(tk.Login, 2, 5, 6, 7, 8, 9, 10)
@@ -81,7 +81,7 @@ func (h *HubMainScreen) Run() {
 			}
 		case login := <-data.AccAction:
 			{
-				respLO := newMainMess(typeLogOut, nil)
+				respLO := newPhoneMess(typeLogOut, nil)
 				status := logOut(login)
 				if status {
 					respLO.Data["authorizedFlag"] = false
@@ -98,7 +98,7 @@ func (h *HubMainScreen) Run() {
 				for client := range h.clients {
 					if client.cookie != "" {
 						if client.cInfo.Valid() != nil {
-							resp := newMainMess(typeLogOut, nil)
+							resp := newPhoneMess(typeLogOut, nil)
 							status := logOut(client.cInfo.Login)
 							if status {
 								resp.Data["authorizedFlag"] = false

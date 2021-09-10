@@ -34,10 +34,11 @@ func (phone *Phone) Update() u.Response{
 	//if err != nil {
 	//	resp := u.Message(http.StatusInternalServerError, fmt.Sprintf("Phone update error: %s", err.Error()))
 	//	return resp
-	//}
+	//}1
+
 	fmt.Printf(string(jsonPhone))
 
-	resp := u.Message(http.StatusOK, "аккаунт обновлен")
+	resp := u.Message(http.StatusOK, "телефон обновлен")
 	return resp
 }
 

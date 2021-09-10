@@ -31,15 +31,15 @@ var (
 	errParseType = "Сервер не смог обработать запрос"
 )
 
-//MapSokResponse структура для отправки сообщений (map)
-type mSResponse struct {
-	Type string                 `json:"type"` //тип сообщения
+// структура для отправки сообщений (phone)
+type phoneResponse struct {
+	Type string  				`json:"type"` //тип сообщения
 	Data map[string]interface{} `json:"data"` //данные
 }
 
 //newMapMess создание нового сообщения
-func newMainMess(mType string, data map[string]interface{}) mSResponse {
-	var resp mSResponse
+func newPhoneMess(mType string, data map[string]interface{}) phoneResponse {
+	var resp phoneResponse
 	resp.Type = mType
 	if data != nil {
 		resp.Data = data
@@ -48,6 +48,24 @@ func newMainMess(mType string, data map[string]interface{}) mSResponse {
 	}
 	return resp
 }
+
+////MapSokResponse структура для отправки сообщений (map)
+//type mSResponse struct {
+//	Type string                 `json:"type"` //тип сообщения
+//	Data map[string]interface{} `json:"data"` //данные
+//}
+//
+////newMapMess создание нового сообщения
+//func newMainMess(mType string, data map[string]interface{}) mSResponse {
+//	var resp mSResponse
+//	resp.Type = mType
+//	if data != nil {
+//		resp.Data = data
+//	} else {
+//		resp.Data = make(map[string]interface{})
+//	}
+//	return resp
+//}
 
 //ErrorMessage структура ошибки
 type ErrorMessage struct {

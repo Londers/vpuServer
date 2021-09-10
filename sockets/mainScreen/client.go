@@ -7,7 +7,6 @@ import (
 	"github.com/Londers/vpuServer/model/data"
 	"github.com/Londers/vpuServer/sockets"
 	"github.com/gorilla/websocket"
-	"github.com/ruraomsk/device/dataBase"
 	"time"
 )
 
@@ -31,13 +30,13 @@ var UserLogoutGS chan string //канал для закрытия сокетов
 type ClientMS struct {
 	hub  *HubMainScreen
 	conn *websocket.Conn
-	send chan mSResponse
+	send chan phoneResponse
 
 	cInfo     *accToken.Token
 	rawToken  string
 	cookie    string
 	isLogin   bool
-	listPhone map[string]dataBase.Phone
+	listPhone map[string] data.Phone
 	work      bool
 }
 
@@ -57,7 +56,7 @@ func (c *ClientMS) readPump() {
 		typeSelect, err := sockets.ChoseTypeMessage(p)
 		if err != nil {
 			logger.Error.Printf("|IP: %v |Login: %v |Resource: /mainScreen |Message: %v \n", c.cInfo.IP, c.cInfo.Login, err.Error())
-			resp := newMainMess(typeError, nil)
+			resp := newPhoneMess(typeError, nil)
 			resp.Data["message"] = ErrorMessage{Error: errParseType}
 			c.send <- resp
 			continue
@@ -65,7 +64,18 @@ func (c *ClientMS) readPump() {
 		switch typeSelect {
 		case typePhoneTable: //отправка default
 			{
-				c.listPhone = make(map[string]dataBase.Phone)
+				c.listPhone = make(map[string]data.Phone)
+			}
+		case typeUpdatePhone:
+			{
+				login, updatedPhone := updatePhone(p, c.listPhone)
+				c.listPhone[login] = updatedPhone
+				//fmt.Println(login, updatedPhone)
+
+				resp := newPhoneMess(typeUpdatePhone, nil)
+
+				resp.Data["phones"] = mapToArray(c.listPhone)
+				c.send <- resp
 			}
 		case typeLogin: //отправка default
 			{
@@ -75,7 +85,7 @@ func (c *ClientMS) readPump() {
 					tokenStr string
 				)
 				_ = json.Unmarshal(p, &account)
-				resp := newMainMess(typeLogin, nil)
+				resp := newPhoneMess(typeLogin, nil)
 				var status bool
 				resp.Data, token, tokenStr, status = logIn(account.Login, account.Password, c.conn.RemoteAddr().String())
 				if token != nil {
@@ -83,7 +93,7 @@ func (c *ClientMS) readPump() {
 					for client := range c.hub.clients {
 						if client.cInfo.Login == account.Login {
 							//logOutSockets(account.Login)
-							respLO := newMainMess(typeLogOut, nil)
+							respLO := newPhoneMess(typeLogOut, nil)
 							client.send <- respLO
 							break
 						}
@@ -103,11 +113,11 @@ func (c *ClientMS) readPump() {
 				)
 				var status bool
 				_ = json.Unmarshal(p, &account)
-				resp := newMainMess(typeLogin, nil)
+				resp := newPhoneMess(typeLogin, nil)
 				resp.Data, token, tokenStr, status = logIn(account.Login, account.Password, c.conn.RemoteAddr().String())
 				if token != nil {
 					//делаем выход из аккаунта
-					respLO := newMainMess(typeLogOut, nil)
+					respLO := newPhoneMess(typeLogOut, nil)
 					status := logOut(c.cInfo.Login)
 					if status {
 						logOutSockets(c.cInfo.Login)
@@ -122,7 +132,7 @@ func (c *ClientMS) readPump() {
 		case typeLogOut: //отправка default
 			{
 				if c.cInfo.Login != "" {
-					resp := newMainMess(typeLogOut, nil)
+					resp := newPhoneMess(typeLogOut, nil)
 					status := logOut(c.cInfo.Login)
 					if status {
 						resp.Data["authorizedFlag"] = false
@@ -136,7 +146,7 @@ func (c *ClientMS) readPump() {
 			}
 		case typeCheckConn: //отправка default
 			{
-				//resp := newMainMess(typeCheckConn, nil)
+				//resp := newPhoneMess(typeCheckConn, nil)
 				//statusDB := false
 				//db, id := data.GetDB()
 				//if db != nil {
@@ -158,7 +168,7 @@ func (c *ClientMS) readPump() {
 			}
 		default:
 			{
-				resp := newMainMess("type", nil)
+				resp := newPhoneMess("type", nil)
 				resp.Data["type"] = typeSelect
 				c.send <- resp
 			}

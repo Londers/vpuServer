@@ -1,12 +1,12 @@
 package mainScreen
 
 import (
+	"github.com/Londers/vpuServer/model/accToken"
+	"github.com/Londers/vpuServer/model/data"
+	u "github.com/Londers/vpuServer/utils"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
-	"github.com/Londers/vpuServer/model/accToken"
-	u "github.com/Londers/vpuServer/utils"
-	"github.com/ruraomsk/device/dataBase"
 	"net/http"
 )
 
@@ -31,8 +31,8 @@ func HMainScreen(c *gin.Context, hub *HubMainScreen) {
 	if err != nil {
 		cookie = ""
 		accInfo.IP = c.ClientIP()
-		client := &ClientMS{hub: hub, conn: conn, send: make(chan mSResponse, 256), cInfo: accInfo, rawToken: tokenInfo.Raw, cookie: cookie, isLogin: false, work: true}
-		client.listPhone = make(map[string]dataBase.Phone)
+		client := &ClientMS{hub: hub, conn: conn, send: make(chan phoneResponse, 256), cInfo: accInfo, rawToken: tokenInfo.Raw, cookie: cookie, isLogin: false, work: true}
+		client.listPhone = make(map[string]data.Phone)
 		go client.writePump()
 		go client.readPump()
 		//time.Sleep(1*time.Second)
@@ -45,9 +45,9 @@ func HMainScreen(c *gin.Context, hub *HubMainScreen) {
 			client.work = true
 			client.isLogin = true
 			client.conn = conn
-			client.send = make(chan mSResponse, 256)
+			client.send = make(chan phoneResponse, 256)
 			client.isLogin = true
-			client.listPhone = make(map[string]dataBase.Phone)
+			client.listPhone = make(map[string]data.Phone)
 			hub.clients[client] = true
 			go client.writePump()
 			go client.readPump()
@@ -57,11 +57,11 @@ func HMainScreen(c *gin.Context, hub *HubMainScreen) {
 	}
 	cookie = ""
 	accInfo.IP = c.ClientIP()
-	client := &ClientMS{hub: hub, conn: conn, send: make(chan mSResponse, 256), cInfo: accInfo, rawToken: tokenInfo.Raw, cookie: cookie, isLogin: false, work: true}
-	client.listPhone = make(map[string]dataBase.Phone)
+	client := &ClientMS{hub: hub, conn: conn, send: make(chan phoneResponse, 256), cInfo: accInfo, rawToken: tokenInfo.Raw, cookie: cookie, isLogin: false, work: true}
+	client.listPhone = make(map[string]data.Phone)
 	go client.writePump()
 	go client.readPump()
-	resp := newMainMess(typeLogOut, nil)
+	resp := newPhoneMess(typeLogOut, nil)
 	status := logOut(client.cInfo.Login)
 	if status {
 		resp.Data["authorizedFlag"] = false
